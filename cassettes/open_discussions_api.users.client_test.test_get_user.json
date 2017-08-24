@@ -1,0 +1,135 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-08-28T16:31:28",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1pdG9kbCIsInJvbGVzIjpbInN0YWZmIl0sImV4cCI6MTUwMzk0MTQ4OCwib3JpZ19pYXQiOjE1MDM5Mzc4ODh9.QuYd3dxbC3TAVBkxolUZGR3BrgZMfpBO_f44JKggmqw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://localhost:8063/api/v0/users/01BRMT958T3DW02ZAYDG7N6QCB"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Type": [
+            "text/html; charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 28 Aug 2017 16:31:28 GMT"
+          ],
+          "Location": [
+            "/api/v0/users/01BRMT958T3DW02ZAYDG7N6QCB/"
+          ],
+          "Server": [
+            "nginx/1.11.6"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ]
+        },
+        "status": {
+          "code": 301,
+          "message": "Moved Permanently"
+        },
+        "url": "http://localhost:8063/api/v0/users/01BRMT958T3DW02ZAYDG7N6QCB"
+      }
+    },
+    {
+      "recorded_at": "2017-08-28T16:31:28",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1pdG9kbCIsInJvbGVzIjpbInN0YWZmIl0sImV4cCI6MTUwMzk0MTQ4OCwib3JpZ19pYXQiOjE1MDM5Mzc4ODh9.QuYd3dxbC3TAVBkxolUZGR3BrgZMfpBO_f44JKggmqw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://localhost:8063/api/v0/users/01BRMT958T3DW02ZAYDG7N6QCB/"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\"id\":41,\"username\":\"01BRMT958T3DW02ZAYDG7N6QCB\",\"profile\":{\"name\":\"my name\",\"image\":\"image1.jpg\",\"image_small\":\"image4.jpg\",\"image_medium\":\"image3.jpg\"}}"
+        },
+        "headers": {
+          "Allow": [
+            "GET, PUT, PATCH, DELETE, OPTIONS"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Mon, 28 Aug 2017 16:31:28 GMT"
+          ],
+          "Server": [
+            "nginx/1.11.6"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://localhost:8063/api/v0/users/01BRMT958T3DW02ZAYDG7N6QCB/"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

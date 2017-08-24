@@ -1,0 +1,76 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-08-28T16:20:05",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"profile\": {\"name\": \"my name\", \"image\": \"image1.jpg\", \"image_small\": \"image2.jpg\", \"image_medium\": \"image3.jpg\"}}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1pdG9kbCIsInJvbGVzIjpbInN0YWZmIl0sImV4cCI6MTUwMzk0MDgwNSwib3JpZ19pYXQiOjE1MDM5MzcyMDV9.ChHtJAGoZ4ajfVfaPa5LrYI28eREWJlCjjP5LLfWfYg"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "114"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://localhost:8063/api/v0/users/"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\"id\":41,\"username\":\"01BRMT958T3DW02ZAYDG7N6QCB\",\"profile\":{\"name\":\"my name\",\"image\":\"image1.jpg\",\"image_small\":\"image2.jpg\",\"image_medium\":\"image3.jpg\"}}"
+        },
+        "headers": {
+          "Allow": [
+            "GET, POST, OPTIONS"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Mon, 28 Aug 2017 16:20:05 GMT"
+          ],
+          "Server": [
+            "nginx/1.11.6"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "Created"
+        },
+        "url": "http://localhost:8063/api/v0/users/"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
