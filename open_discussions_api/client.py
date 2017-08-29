@@ -3,6 +3,7 @@ import requests
 
 from open_discussions_api.users.client import UsersApi
 from open_discussions_api.utils import get_token
+from open_discussions_api.channels.client import ChannelsApi
 
 
 class OpenDiscussionsApi(object):
@@ -63,3 +64,10 @@ class OpenDiscussionsApi(object):
             open_discussions_api.users.client.UsersApi: configured users api
         """
         return UsersApi(self._get_authenticated_session(), self.base_url, self.version)
+
+    @property
+    def channels(self):
+        """
+        Channels API
+        """
+        return ChannelsApi(self._get_authenticated_session(), self.base_url, self.version)

@@ -1,0 +1,76 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-09-05T16:05:18",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"title\": \"new test channel\", \"name\": \"examplechannel\", \"public_description\": \"a good channel for all things\", \"channel_type\": \"public\"}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFsaWNlIiwicm9sZXMiOlsic3RhZmYiXSwiZXhwIjoxNTA0NjMxMTE3LCJvcmlnX2lhdCI6MTUwNDYyNzUxN30._wbyMW6weSfDL6yyxeDpkqkHOYum87EjG8DmZ1lAj60"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "136"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://localhost:8063/api/v0/channels/"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\"title\":\"new test channel\",\"name\":\"examplechannel\",\"public_description\":\"a good channel for all things\",\"channel_type\":\"public\"}"
+        },
+        "headers": {
+          "Allow": [
+            "GET, POST, HEAD, OPTIONS"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Tue, 05 Sep 2017 16:05:18 GMT"
+          ],
+          "Server": [
+            "nginx/1.11.9"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "Created"
+        },
+        "url": "http://localhost:8063/api/v0/channels/"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
