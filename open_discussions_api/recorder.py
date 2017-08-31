@@ -15,7 +15,7 @@ def record(name, username, roles=None):
     Record a cassette of some reddit communication.
 
     Usage:
-        with record('cassette_name', 'username', roles=['staff']) as api:
+        with record('cassette_name', 'username', roles=[ROLE_STAFF]) as api:
             api.users.list()
 
     Args:

@@ -4,6 +4,7 @@ import pytest
 
 from open_discussions_api.betamax_config import setup_betamax
 from open_discussions_api.client import OpenDiscussionsApi
+from open_discussions_api.constants import ROLE_STAFF
 
 
 @pytest.fixture
@@ -22,4 +23,4 @@ def use_betamax(mocker, configure_betamax, betamax_recorder):
 @pytest.fixture
 def api_client(use_betamax):
     """API client"""
-    return OpenDiscussionsApi('secret', 'http://localhost:8063/', 'username', roles=['staff'])
+    return OpenDiscussionsApi('secret', 'http://localhost:8063/', 'username', roles=[ROLE_STAFF])
