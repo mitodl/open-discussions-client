@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+Version 0.1.2
+-------------
+
+- Added constant for staff role
+
 Version 0.1.1
 -------------
 
