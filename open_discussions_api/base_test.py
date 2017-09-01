@@ -1,6 +1,6 @@
 """Tests for base API class"""
 
-from .base import BaseApi
+from open_discussions_api.base import BaseApi
 
 
 def test_get_url():

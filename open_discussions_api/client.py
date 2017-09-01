@@ -1,12 +1,8 @@
 """open-discussions api client"""
-import time
-
-import jwt
 import requests
 
-from .users.client import UsersApi
-
-EXPIRATION_DELTA_SECONDS = 60 * 60
+from open_discussions_api.users.client import UsersApi
+from open_discussions_api.utils import get_token
 
 
 class OpenDiscussionsApi(object):
@@ -33,21 +29,6 @@ class OpenDiscussionsApi(object):
         self.username = username
         self.roles = roles or []
 
-    def get_token(self):
-        """
-        Gets a JWt token
-
-        Returns:
-            str: encoded JWT token
-        """
-        now = int(time.time())
-        return jwt.encode({
-            'username': self.username,
-            'roles': self.roles,
-            'exp': now + EXPIRATION_DELTA_SECONDS,
-            'orig_iat': now,
-        }, self.secret, algorithm='HS256').decode('utf-8')
-
     def _get_session(self):
         """
         Gets an initial session
@@ -65,9 +46,10 @@ class OpenDiscussionsApi(object):
         Returns:
             requests.Session: authenticated session
         """
+        token = get_token(self.secret, self.username, self.roles)
         session = self._get_session()
         session.headers.update({
-            'Authorization': 'Bearer {}'.format(self.get_token()),
+            'Authorization': 'Bearer {}'.format(token),
             'Content-Type': 'application/json',
         })
         return session

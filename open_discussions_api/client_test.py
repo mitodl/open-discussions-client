@@ -1,8 +1,8 @@
 """Tests for client API class"""
 import pytest
 
-from .client import OpenDiscussionsApi
-from .users.client import UsersApi
+from open_discussions_api.client import OpenDiscussionsApi
+from open_discussions_api.users.client import UsersApi
 
 
 def test_client_invalid_secret():
