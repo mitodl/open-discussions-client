@@ -1,16 +1,13 @@
-Release Notes
+Release notes
 =============
 
-Version 0.1.2
+Version 0.1.3
 -------------
 
-- Added constant for staff role
 
-Version 0.1.1
--------------
+- Refactored get_token to a utils module
 
-- Added manifest
-- Added setup.cfg
+
 
 Version 0.1.0
 -------------
