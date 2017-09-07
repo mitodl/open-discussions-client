@@ -1,5 +1,10 @@
-Release notes
+Release Notes
 =============
+
+Version 0.2.0
+-------------
+
+- Add create channel API to the client
 
 Version 0.1.3
 -------------
