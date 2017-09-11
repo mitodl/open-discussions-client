@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+Version 0.2.1
+-------------
+
+- Added extra_payload arg to get_token
+
 Version 0.2.0
 -------------
 
