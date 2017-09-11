@@ -1,4 +1,4 @@
-"""Add context manager to make recording reddit requests simpler"""
+"""Add context manager to make recording open-discussion requests simpler"""
 from contextlib import contextmanager
 from unittest.mock import patch
 
