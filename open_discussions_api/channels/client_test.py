@@ -78,3 +78,18 @@ def test_create_channel_with_bad_channel_type(api_client):
             channel_type="fun"
         )
     assert str(err.value) == "Channel type 'fun' is not a valid option"
+
+
+def test_add_contributor(api_client):
+    """This should add one contributor to a channel"""
+    resp = api_client.channels.add_contributor("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
+    assert resp.status_code == 201
+    assert resp.json() == {
+        "contributor_name": "01BSRT7XMQT33SCNKTYTSES5QQ"
+    }
+
+
+def test_remove_contributor(api_client):
+    """This should remove a contributor to a channel"""
+    resp = api_client.channels.remove_contributor("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
+    assert resp.status_code == 204
