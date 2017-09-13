@@ -24,7 +24,7 @@ def _parse_request_body(request):
 
 
 class CustomBodyMatcher(BodyMatcher):
-    """Override BodyMatcher to skip OAuth body checks, and compare JSON if applicable"""
+    """Override BodyMatcher to convert str to bytes and compare JSON if applicable"""
 
     name = 'custom-body'
 
@@ -33,10 +33,6 @@ class CustomBodyMatcher(BodyMatcher):
 
         request_body = _parse_request_body(request)
         recorded_body = _parse_request_body(recorded_request)
-
-        # Don't check body for oauth workflow
-        if request.url.endswith('api/v1/access_token'):
-            return True
 
         return recorded_body == request_body
 
