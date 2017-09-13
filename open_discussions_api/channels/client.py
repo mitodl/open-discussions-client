@@ -92,3 +92,40 @@ class ChannelsApi(BaseApi):
                 username=quote(username),
             ))
         )
+
+    def add_moderator(self, channel_name, username):
+        """
+        Add a moderator to a channel
+
+        Args:
+            channel_name (str): The name of the channel
+            username (str): The name of the user to add as moderator
+
+        Returns:
+            requests.Response: The response of the request to add a moderator. This should only
+            contain the moderator username, the same which was passed in the request.
+        """
+        return self.session.post(
+            self.get_url("/channels/{channel_name}/moderators/".format(
+                channel_name=quote(channel_name)
+            )),
+            json={"moderator_name": username},
+        )
+
+    def remove_moderator(self, channel_name, username):
+        """
+        Remove a moderator from a channel
+
+        Args:
+            channel_name (str): The name of the channel
+            username (str): The name of the moderator to remove
+
+        Returns:
+            request.Response: The response of the request to remove the moderator
+        """
+        return self.session.delete(
+            self.get_url("/channels/{channel_name}/moderators/{username}/".format(
+                channel_name=quote(channel_name),
+                username=quote(username),
+            ))
+        )
