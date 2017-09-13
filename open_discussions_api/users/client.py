@@ -15,15 +15,36 @@ class UsersApi(BaseApi):
     """Users API"""
 
     def list(self):
-        """Returns a list of users"""
+        """
+        Returns a list of users
+
+        Returns:
+            requests.Response: A response containing the data for all users in open-discussions
+        """
         return self.session.get(self.get_url("/users/"))
 
     def get(self, username):
-        """Gets a specific user"""
-        return self.session.get(self.get_url("/users/{}").format(quote(username)))
+        """
+        Gets a specific user
+
+        Args:
+            username (str): The username for the user
+
+        Returns:
+            requests.Response: A response containing the user's data
+        """
+        return self.session.get(self.get_url("/users/{}/").format(quote(username)))
 
     def create(self, **profile):
-        """Creates a new user"""
+        """
+        Creates a new user
+
+        Args:
+            profile (dict): attributes used in creating the profile. See SUPPORTED_USER_ATTRIBUTES for a list.
+
+        Returns:
+            requests.Response: A response containing the newly created profile data
+        """
         if not profile:
             raise AttributeError("No fields provided to create")
 
@@ -37,7 +58,17 @@ class UsersApi(BaseApi):
         )
 
     def update(self, username, **profile):
-        """Gets a specific user"""
+        """
+        Gets a specific user
+
+        Args:
+            username (str): The username of the user
+            profile (dict):
+                Attributes of the profile to update for that user. See SUPPORTED_USER_ATTRIBUTES for a valid list.
+
+        Returns:
+            requests.Response: A response containing the updated user profile data
+        """
         if not profile:
             raise AttributeError("No fields provided to update")
 
