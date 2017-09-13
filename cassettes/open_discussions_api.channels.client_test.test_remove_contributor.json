@@ -1,0 +1,70 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-09-11T18:26:51",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Imdlb3JnZSIsIm9yaWdfaWF0IjoxNTA1MTU0NDEwLCJleHAiOjE1MDUxNTgwMTAsInJvbGVzIjpbInN0YWZmIl19.OWz6l87qR23x32mdcXbFft0EVaobFlTIWlRe6_3qdeA"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "http://localhost:8063/api/v0/channels/a_channel/contributors/01BSRT7XMQT33SCNKTYTSES5QQ/"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Allow": [
+            "GET, DELETE, HEAD, OPTIONS"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Mon, 11 Sep 2017 18:26:51 GMT"
+          ],
+          "Server": [
+            "nginx/1.11.6"
+          ],
+          "Vary": [
+            "Accept"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "No Content"
+        },
+        "url": "http://localhost:8063/api/v0/channels/a_channel/contributors/01BSRT7XMQT33SCNKTYTSES5QQ/"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

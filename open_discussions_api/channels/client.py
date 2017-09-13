@@ -1,4 +1,6 @@
 """Channels API"""
+from urllib.parse import quote
+
 from open_discussions_api.base import BaseApi
 from open_discussions_api.channels.constants import CHANNEL_ATTRIBUTES, VALID_CHANNEL_TYPES
 
@@ -22,7 +24,18 @@ class ChannelsApi(BaseApi):
     """Channels API"""
 
     def create(self, **channel_params):
-        """create a new channel"""
+        """
+        Create a new channel
+
+        Args:
+            channel_params (dict):
+                Attributes used in creation of the channel, see CHANNEL_ATTRIBUTES for a list
+
+        Returns:
+            requests.Response:
+                The response to the channel creation. If successful it contains the payload with
+                the new channel's parameters.
+        """
         if not channel_params:
             raise EmptyAttributesError()
 
@@ -38,4 +51,44 @@ class ChannelsApi(BaseApi):
         return self.session.post(
             self.get_url("/channels/"),
             json=channel_params
+        )
+
+    def add_contributor(self, channel_name, username):
+        """
+        Add a contributor to a channel
+
+        Args:
+            channel_name (str): The name of the channel
+            username (str): The username of the contributor
+
+        Returns:
+            requests.Response:
+                The response of the request to add a contributor. This should only
+                contain the contributor's username in its payload, similar to the request payload.
+        """
+
+        return self.session.post(
+            self.get_url("/channels/{channel_name}/contributors/".format(
+                channel_name=quote(channel_name),
+            )),
+            json={"contributor_name": username}
+        )
+
+    def remove_contributor(self, channel_name, username):
+        """
+        Remove a contributor from a channel
+
+        Args:
+            channel_name (str): The name of the channel
+            username (str): The username of the contributor to be removed
+
+        Returns:
+            requests.Response: The response of the request to delete the contributor
+        """
+
+        return self.session.delete(
+            self.get_url("/channels/{channel_name}/contributors/{username}/".format(
+                channel_name=quote(channel_name),
+                username=quote(username),
+            ))
         )
