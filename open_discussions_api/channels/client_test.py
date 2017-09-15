@@ -82,14 +82,31 @@ def test_create_channel_with_bad_channel_type(api_client):
 
 def test_add_contributor(api_client):
     """This should add one contributor to a channel"""
-    resp = api_client.channels.add_contributor("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
+    username = "01BSRT7XMQT33SCNKTYTSES5QQ"
+    resp = api_client.channels.add_contributor("a_channel", username)
     assert resp.status_code == 201
     assert resp.json() == {
-        "contributor_name": "01BSRT7XMQT33SCNKTYTSES5QQ"
+        "contributor_name": username
     }
 
 
 def test_remove_contributor(api_client):
     """This should remove a contributor to a channel"""
     resp = api_client.channels.remove_contributor("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
+    assert resp.status_code == 204
+
+
+def test_add_moderator(api_client):
+    """This should add one moderator to a channel"""
+    username = "01BSRT7XMQT33SCNKTYTSES5QQ"
+    resp = api_client.channels.add_moderator("a_channel", username)
+    assert resp.status_code == 201
+    assert resp.json() == {
+        "moderator_name": username
+    }
+
+
+def test_remove_moderator(api_client):
+    """This should remove a moderator from a channel"""
+    resp = api_client.channels.remove_moderator("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
     assert resp.status_code == 204

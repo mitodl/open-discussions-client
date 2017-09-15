@@ -1,0 +1,76 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-09-13T14:42:20",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"moderator_name\": \"01BSRT7XMQT33SCNKTYTSES5QQ\"}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJzdGFmZiJdLCJvcmlnX2lhdCI6MTUwNTMxMzczOCwiZXhwIjoxNTA1MzE3MzM4LCJ1c2VybmFtZSI6InJlZGRpdCJ9._REArmnLqagy6nlrHnR3BUjPozQClTbwpm17puBhyqI"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "48"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://localhost:8063/api/v0/channels/a_channel/moderators/"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\"moderator_name\":\"01BSRT7XMQT33SCNKTYTSES5QQ\"}"
+        },
+        "headers": {
+          "Allow": [
+            "GET, POST, HEAD, OPTIONS"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Wed, 13 Sep 2017 14:42:20 GMT"
+          ],
+          "Server": [
+            "nginx/1.11.6"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "Created"
+        },
+        "url": "http://localhost:8063/api/v0/channels/a_channel/moderators/"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
