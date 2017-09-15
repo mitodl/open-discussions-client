@@ -136,7 +136,7 @@ class ChannelsApi(BaseApi):
 
         Args:
             channel_name (str): The name of the channel
-            username (str): The username of the contributor
+            username (str): The username of the subscriber
 
         Returns:
             requests.Response:
