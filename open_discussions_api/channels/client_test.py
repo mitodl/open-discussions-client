@@ -91,7 +91,7 @@ def test_add_contributor(api_client):
 
 
 def test_remove_contributor(api_client):
-    """This should remove a contributor to a channel"""
+    """This should remove a contributor from a channel"""
     resp = api_client.channels.remove_contributor("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
     assert resp.status_code == 204
 
@@ -109,4 +109,20 @@ def test_add_moderator(api_client):
 def test_remove_moderator(api_client):
     """This should remove a moderator from a channel"""
     resp = api_client.channels.remove_moderator("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
+    assert resp.status_code == 204
+
+
+def test_add_subscriber(api_client):
+    """This should add a subscriber to a channel"""
+    username = "01BSRT7XMQT33SCNKTYTSES5QQ"
+    resp = api_client.channels.add_subscriber("a_channel", username)
+    assert resp.status_code == 201
+    assert resp.json() == {
+        "subscriber_name": username
+    }
+
+
+def test_remove_subscriber(api_client):
+    """This should remove a subscriber from a channel"""
+    resp = api_client.channels.remove_subscriber("a_channel", "01BSRT7XMQT33SCNKTYTSES5QQ")
     assert resp.status_code == 204

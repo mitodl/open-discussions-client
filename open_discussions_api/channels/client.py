@@ -129,3 +129,41 @@ class ChannelsApi(BaseApi):
                 username=quote(username),
             ))
         )
+
+    def add_subscriber(self, channel_name, username):
+        """
+        Add a subscriber to a channel
+
+        Args:
+            channel_name (str): The name of the channel
+            username (str): The username of the subscriber
+
+        Returns:
+            requests.Response:
+                The response of the request to add a subscriber.
+        """
+        return self.session.post(
+            self.get_url("/channels/{channel_name}/subscribers/".format(
+                channel_name=quote(channel_name),
+            )),
+            json={"subscriber_name": username}
+        )
+
+    def remove_subscriber(self, channel_name, username):
+        """
+        Remove a subscriber from a channel
+
+        Args:
+            channel_name (str): The name of the channel
+            username (str): The username of the subscriber
+
+        Returns:
+            requests.Response:
+                The response of the request to add a subscriber
+        """
+        return self.session.delete(
+            self.get_url("/channels/{channel_name}/subscribers/{username}/".format(
+                channel_name=quote(channel_name),
+                username=quote(username),
+            ))
+        )
