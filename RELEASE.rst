@@ -1,6 +1,13 @@
 Release Notes
 =============
 
+Version 0.2.2
+-------------
+
+- Add add_subscriber and remove_subscriber (#20)
+- Added add_moderator and remove_moderator (#19)
+- Add add_contributor and remove_contributor (#18)
+
 Version 0.2.1
 -------------
 
