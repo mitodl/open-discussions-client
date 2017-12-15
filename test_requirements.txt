@@ -6,7 +6,7 @@ ipython
 nplusone
 pdbpp
 pip-tools
-pylint==1.7.1
+pylint==1.7.5
 pytest
 pytest-cov
 pytest-pep8
