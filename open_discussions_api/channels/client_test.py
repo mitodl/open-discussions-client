@@ -14,6 +14,7 @@ def test_create_channel(api_client):
     resp = api_client.channels.create(
         title="new test channel",
         name="examplechannel",
+        description="a good channel for all things",
         public_description="a good channel for all things",
         channel_type="public"
     )
@@ -21,12 +22,14 @@ def test_create_channel(api_client):
     assert json.loads(resp.request.body) == {
         "title": "new test channel",
         "name": "examplechannel",
+        "description": "a good channel for all things",
         "public_description": "a good channel for all things",
         "channel_type": "public"
     }
     assert resp.json() == {
         "title": "new test channel",
         "name": "examplechannel",
+        "description": "a good channel for all things",
         "public_description": "a good channel for all things",
         "channel_type": "public"
     }
@@ -37,6 +40,7 @@ def test_create_private_channel(api_client):
     resp = api_client.channels.create(
         title="new private channel",
         name="privatechannel",
+        description="a good channel for all things",
         public_description="a good channel for all things",
         channel_type="private"
     )
@@ -44,12 +48,14 @@ def test_create_private_channel(api_client):
     assert json.loads(resp.request.body) == {
         "title": "new private channel",
         "name": "privatechannel",
+        "description": "a good channel for all things",
         "public_description": "a good channel for all things",
         "channel_type": "private"
     }
     assert resp.json() == {
         "title": "new private channel",
         "name": "privatechannel",
+        "description": "a good channel for all things",
         "public_description": "a good channel for all things",
         "channel_type": "private"
     }
@@ -74,6 +80,7 @@ def test_create_channel_with_bad_channel_type(api_client):
         api_client.channels.create(
             title="new private channel",
             name="privatechannel",
+            description="a good channel for all things",
             public_description="a good channel for all things",
             channel_type="fun"
         )

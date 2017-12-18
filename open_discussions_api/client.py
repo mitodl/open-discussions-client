@@ -6,7 +6,7 @@ from open_discussions_api.utils import get_token
 from open_discussions_api.channels.client import ChannelsApi
 
 
-class OpenDiscussionsApi(object):
+class OpenDiscussionsApi:
     """
     A client for speaking with open-discussions
 

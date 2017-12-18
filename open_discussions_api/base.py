@@ -3,7 +3,7 @@
 from urllib.parse import urljoin
 
 
-class BaseApi(object):
+class BaseApi:
     """Base class for APIs"""
     def __init__(self, session, base_url, version):
         self.session = session

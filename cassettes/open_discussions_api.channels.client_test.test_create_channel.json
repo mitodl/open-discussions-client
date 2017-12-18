@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"title\": \"new test channel\", \"name\": \"examplechannel\", \"public_description\": \"a good channel for all things\", \"channel_type\": \"public\"}"
+          "string": "{\"title\": \"new test channel\", \"name\": \"examplechannel\", \"description\": \"a good channel for all things\", \"public_description\": \"a good channel for all things\", \"channel_type\": \"public\"}"
         },
         "headers": {
           "Accept": [
@@ -36,7 +36,7 @@
       "response": {
         "body": {
           "encoding": null,
-          "string": "{\"title\":\"new test channel\",\"name\":\"examplechannel\",\"public_description\":\"a good channel for all things\",\"channel_type\":\"public\"}"
+          "string": "{\"title\":\"new test channel\",\"name\":\"examplechannel\", \"description\": \"a good channel for all things\",\"public_description\":\"a good channel for all things\",\"channel_type\":\"public\"}"
         },
         "headers": {
           "Allow": [

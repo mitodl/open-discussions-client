@@ -1,3 +1,4 @@
+astroid==1.5.3 # fix https://github.com/PyCQA/pylint/issues/1609
 betamax
 betamax_serializers
 codecov
@@ -6,7 +7,7 @@ ipython
 nplusone
 pdbpp
 pip-tools
-pylint==1.7.1
+pylint==1.7.5
 pytest
 pytest-cov
 pytest-pep8
