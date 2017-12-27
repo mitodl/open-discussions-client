@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+Version 0.3.0
+-------------
+
+- Added &#34;description&#34; field for creating channels (#23)
+
 Version 0.2.2
 -------------
 
