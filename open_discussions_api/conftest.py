@@ -23,4 +23,4 @@ def use_betamax(mocker, configure_betamax, betamax_recorder):
 @pytest.fixture
 def api_client(use_betamax):
     """API client"""
-    return OpenDiscussionsApi('secret', 'http://localhost:8063/', 'username', roles=[ROLE_STAFF])
+    return OpenDiscussionsApi('secret', 'http://localhost:8063/', 'mitodl', roles=[ROLE_STAFF])
