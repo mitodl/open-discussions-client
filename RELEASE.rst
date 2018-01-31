@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+Version 0.4.0
+-------------
+
+- Added email and email_optin fields (#26)
+
 Version 0.3.0
 -------------
 
