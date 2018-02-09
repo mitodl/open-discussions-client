@@ -9,6 +9,7 @@ SUPPORTED_PROFILE_ATTRIBUTES = (
     'image_small',
     'image_medium',
     'email_optin',
+    'email',
 )
 
 
