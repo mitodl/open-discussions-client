@@ -36,13 +36,14 @@ class UsersApi(BaseApi):
         """
         return self.session.get(self.get_url("/users/{}/").format(quote(username)))
 
-    def create(self, email=None, profile=None):
+    def create(self, email=None, profile=None, email_optin=False):
         """
         Creates a new user
 
         Args:
             email (str): the user's email
             profile (dict): attributes used in creating the profile. See SUPPORTED_USER_ATTRIBUTES for a list.
+            email_optin (bool): when email_optin is enable.
 
         Returns:
             requests.Response: A response containing the newly created profile data
@@ -56,6 +57,7 @@ class UsersApi(BaseApi):
 
         payload = {
             'profile': profile or {},
+            'email_optin': email_optin,
         }
 
         if email is not None:

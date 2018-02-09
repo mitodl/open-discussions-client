@@ -23,24 +23,25 @@ def test_list_users(api_client):
 
 def test_create_user(api_client):
     """Test create user"""
+    email_optin = True
     resp = api_client.users.create(
         email='user@example.com',
+        email_optin=email_optin,
         profile=dict(
             name="my name",
             image="image1.jpg",
             image_small="image2.jpg",
-            image_medium="image3.jpg",
-            email_optin=True
+            image_medium="image3.jpg"
         )
     )
     assert json.loads(resp.request.body) == {
         "email": "user@example.com",
+        "email_optin": email_optin,
         "profile": {
             "name": "my name",
             "image": "image1.jpg",
             "image_small": "image2.jpg",
-            "image_medium": "image3.jpg",
-            "email_optin": True,
+            "image_medium": "image3.jpg"
         }
     }
     assert resp.status_code == 201
