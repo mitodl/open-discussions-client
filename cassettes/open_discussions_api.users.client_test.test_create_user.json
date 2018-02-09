@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"email\": \"user@example.com\", \"profile\": {\"email_optin\": true, \"image_medium\": \"image3.jpg\", \"name\": \"my name\", \"image\": \"image1.jpg\", \"image_small\": \"image2.jpg\"}}"
+          "string": "{\"email\": \"user@example.com\", \"email_optin\": true, \"profile\": {\"image_medium\": \"image3.jpg\", \"name\": \"my name\", \"image\": \"image1.jpg\", \"image_small\": \"image2.jpg\"}}"
         },
         "headers": {
           "Accept": [
