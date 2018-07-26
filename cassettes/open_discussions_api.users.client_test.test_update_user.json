@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"profile\": {\"image_small\": \"image4.jpg\"}}"
+          "string": "{\"uid\": \"user1\", \"email\": \"user@example.com\", \"profile\": {\"image_small\": \"image4.jpg\"}}"
         },
         "headers": {
           "Accept": [

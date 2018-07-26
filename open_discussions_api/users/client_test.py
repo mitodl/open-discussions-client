@@ -24,6 +24,7 @@ def test_list_users(api_client):
 def test_create_user(api_client):
     """Test create user"""
     resp = api_client.users.create(
+        'user1',
         email='user@example.com',
         profile=dict(
             name="my name",
@@ -34,6 +35,7 @@ def test_create_user(api_client):
         )
     )
     assert json.loads(resp.request.body) == {
+        "uid": "user1",
         "email": "user@example.com",
         "profile": {
             "name": "my name",
@@ -59,14 +61,14 @@ def test_create_user(api_client):
 def test_create_user_no_profile_props(api_client):
     """Updating with no args raises error"""
     with pytest.raises(AttributeError) as err:
-        api_client.users.create()
+        api_client.users.create('user1')
     assert str(err.value) == "No fields provided to create"
 
 
 def test_create_user_invalid_profile_props(api_client):
     """Updating with invalid arg raises error"""
     with pytest.raises(AttributeError) as err:
-        api_client.users.create(profile=dict(bad_arg=2))
+        api_client.users.create('user1', profile=dict(bad_arg=2))
     assert str(err.value) == "Profile attribute bad_arg is not supported"
 
 
@@ -88,8 +90,15 @@ def test_get_user(api_client, use_betamax):
 
 def test_update_user(api_client):
     """Test patch user"""
-    resp = api_client.users.update("01BRMT958T3DW02ZAYDG7N6QCB", profile=dict(image_small="image4.jpg"))
+    resp = api_client.users.update(
+        "01BRMT958T3DW02ZAYDG7N6QCB",
+        uid='user1',
+        email='user@example.com',
+        profile=dict(image_small="image4.jpg")
+    )
     assert json.loads(resp.request.body) == {
+        "uid": "user1",
+        "email": "user@example.com",
         "profile": {
             "image_small": "image4.jpg",
         }

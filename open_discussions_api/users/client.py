@@ -36,11 +36,12 @@ class UsersApi(BaseApi):
         """
         return self.session.get(self.get_url("/users/{}/").format(quote(username)))
 
-    def create(self, email=None, profile=None):
+    def create(self, uid, email=None, profile=None):
         """
         Creates a new user
 
         Args:
+            uid (str): the user's unique identity on the client system
             email (str): the user's email
             profile (dict): attributes used in creating the profile. See SUPPORTED_USER_ATTRIBUTES for a list.
 
@@ -55,6 +56,7 @@ class UsersApi(BaseApi):
                 raise AttributeError("Profile attribute {} is not supported".format(key))
 
         payload = {
+            'uid': uid,
             'profile': profile or {},
         }
 
@@ -66,12 +68,14 @@ class UsersApi(BaseApi):
             json=payload,
         )
 
-    def update(self, username, email=None, profile=None):
+    def update(self, username, uid=None, email=None, profile=None):
         """
         Gets a specific user
 
         Args:
             username (str): The username of the user
+            uid (str): the user's unique identity on the client system
+            email (str): the user's email
             profile (dict):
                 Attributes of the profile to update for that user. See SUPPORTED_USER_ATTRIBUTES for a valid list.
 
@@ -91,6 +95,9 @@ class UsersApi(BaseApi):
 
         if email is not None:
             payload['email'] = email
+
+        if uid is not None:
+            payload['uid'] = uid
 
         return self.session.patch(
             self.get_url("/users/{}/".format(quote(username))),
