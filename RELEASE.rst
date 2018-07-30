@@ -1,6 +1,12 @@
 Release Notes
 =============
 
+Version 0.5.0
+-------------
+
+- Remove python 3.5
+- Added uid field so open can create social auth objects
+
 Version 0.4.0
 -------------
 
